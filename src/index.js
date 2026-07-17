@@ -21,10 +21,13 @@ app.listen(3000, async () => {
     // await tweet.save();
 
     const tweetRepo = new TweetRepository();
-    const tweet = await tweetRepo.getAll(2,4);
+    const tweet = await tweetRepo.create({content:'With hooks'});
     console.log(tweet);
+    // const tweet = await tweetRepo.getAll(2,4);
+    // console.log(tweet);
 });
 
 
 //for pagination in mongoose we use skip and limit 
 //virtuals
+//triggers
