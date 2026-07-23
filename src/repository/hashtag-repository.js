@@ -1,5 +1,5 @@
+import Hashtag from '../models/hashtags.js';
 
-const Hashtag = require('../models/hashtags');
 
 
 class HashtagRepository{
@@ -54,4 +54,4 @@ class HashtagRepository{
     }
 }
 
-module.exports = HashtagRepository;
+export default HashtagRepository;
