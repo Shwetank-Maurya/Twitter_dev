@@ -6,7 +6,8 @@ class CommentService{
         this.tweetRepository = new TweetRepository();
     }
 
-    async create(modelId,modelType,userId){
+    async create(modelId,modelType,userId,content){
+
         if(modelType == "Tweet"){
             var commentable = await this.tweetRepository.get(modelId)
         }else if(modelType == "Comment"){
@@ -15,13 +16,15 @@ class CommentService{
         else{
             throw new Error('Unknown model Type');
         }
-        const comment = await this.CommentRepository.create({
+        
+        const comment = await this.commentRepository.create({
             content:content,
             userId:userId,
             onModel: modelType,
             commentable:modelId,
             comments:[]
         });
+        // console.log("ONE step further");
         commentable.comments.push(comment);
         await commentable.save();
 
