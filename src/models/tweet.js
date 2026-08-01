@@ -17,7 +17,12 @@ const tweetSchema = new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:'Like'
         }
-    ]
+  ],
+  image: {
+    type:String,
+  },
+    
+    
 },{timestamps:true});
 
 
