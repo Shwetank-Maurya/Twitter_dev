@@ -18,7 +18,8 @@ export const createTweet = async (req,res) =>{
       const payload = {...req.body};
       payload.image = req.file.location;
       const response = await tweetService.create(payload);
-      return res.json({
+      console.log(response);
+      return res.status(201).json({
         success: true,
         message: "Successfully created a new tweet",
         data: response,
